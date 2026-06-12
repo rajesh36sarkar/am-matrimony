@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Firebase (if you ever generate service account keys)
+*.json
+!package.json
+!package-lock.json
+!jsconfig.json
