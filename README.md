@@ -1,4 +1,4 @@
-# 💍 A&M Matrimony
+# A&M Matrimony
 
 A modern, full-stack matrimonial web application built with **Next.js** and **Firebase** that helps users discover compatible life partners through a secure and user-friendly platform.
 
