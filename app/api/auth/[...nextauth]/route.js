@@ -1,10 +1,9 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { PrismaClient } from "@prisma/client";
+import { prisma } from "@/lib/prisma";
 import bcrypt from "bcryptjs";
 import { Resend } from "resend";
 
-const prisma = new PrismaClient();
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const authOptions = {
@@ -48,7 +47,7 @@ export const authOptions = {
   },
   pages: {
     signIn: "/login",
-    error: "/login", // error redirect
+    error: "/login",
   },
   session: { strategy: "jwt" },
   secret: process.env.NEXTAUTH_SECRET,

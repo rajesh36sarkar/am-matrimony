@@ -1,7 +1,6 @@
 "use client";
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { MessageCircle } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function FloatingEnquiryButton() {
   return (
@@ -11,13 +10,15 @@ export default function FloatingEnquiryButton() {
       transition={{ delay: 1, type: "spring" }}
       className="fixed bottom-6 right-6 z-50"
     >
-      <Link
-        href="/enquiry"
-        className="bg-secondary text-gray-900 px-5 py-3 rounded-full shadow-lg hover:bg-opacity-90 transition flex items-center space-x-2 font-semibold"
+      <a
+        href="https://wa.me/919876543210"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-green-500 text-white px-5 py-3 rounded-full shadow-lg hover:bg-green-600 hover:-translate-y-1 transition-all duration-300 flex items-center space-x-2 font-semibold"
       >
-        <MessageCircle size={20} />
-        <span>Enquiry</span>
-      </Link>
+        <FaWhatsapp size={22} />
+        <span>Chat with us</span>
+      </a>
     </motion.div>
   );
 }
