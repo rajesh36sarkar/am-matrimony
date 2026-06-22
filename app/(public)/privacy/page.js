@@ -9,42 +9,62 @@ export default function Privacy() {
     {
       id: 1,
       title: "Information We Collect",
-      content: "We collect personal information you provide directly to us during registration and profile completion. This includes your name, email address, phone number, date of birth, gender, religion, caste, family details, educational background, career information, and partner preferences."
+      content: "We may collect the following information during registration and service usage: Full Name, Date of Birth and Age, Gender, Contact Number, Email Address, Residential City and State, Educational Qualifications, Occupation and Income Details, Family Information, Horoscope/Kundli Details (if provided), Profile Photographs, and Communication records with our support team."
     },
     {
       id: 2,
       title: "How We Use Your Information",
-      content: "We use the information primarily to facilitate highly compatible matchmaking. Additionally, we use your data to communicate with you regarding matches, improve our algorithms and services, process payments, and ensure platform security against fraud."
+      content: "Your information may be used to: create and manage your matrimonial profile, provide suitable matchmaking services, share matching profiles based on your preferences, contact you regarding profile updates and service-related matters, improve our services and customer experience, and prevent fraud and misuse of our platform."
     },
     {
       id: 3,
-      title: "Sharing of Information",
-      content: "Your privacy is our priority. We do not sell or share your personal information with third-party marketers. Data is only shared as strictly necessary to provide our service (e.g., secure cloud hosting, email delivery providers) or when legally required by law enforcement."
+      title: "Information Sharing",
+      content: "Your profile information may be visible to other registered members based on your selected membership plan. We do not sell, rent, or trade your personal information to third parties. Information may be disclosed when required by law, court order, or government authorities."
     },
     {
       id: 4,
-      title: "Data Security",
-      content: "We implement rigorous industry-standard security measures, including end-to-end encryption for chat, strict database access controls, and regular vulnerability audits to protect your sensitive personal data from unauthorized access or breaches."
+      title: "Profile Privacy",
+      content: "Members are responsible for the information they choose to share. A&M Matrimony may provide options to hide contact details or photographs based on membership plans. Users should exercise caution while sharing personal or financial information with other members."
     },
     {
       id: 5,
-      title: "Your Rights",
-      content: "You retain full control over your data. You may request access to, correction of, or complete deletion of your personal data at any time. You can also control profile visibility through your dashboard. For assistance, contact us at hello@am-matrimony.com."
+      title: "Data Security",
+      content: "We implement reasonable security measures to protect your personal information from unauthorized access, misuse, alteration, or disclosure. However, no online platform can guarantee 100% security, and users share information at their own discretion."
     },
     {
       id: 6,
-      title: "Cookies and Tracking",
-      content: "We use cookies and similar tracking technologies to keep you logged in, enhance user experience, and analyze site traffic patterns. You can choose to disable non-essential cookies through your browser settings without losing access to core features."
+      title: "Cookies and Website Usage",
+      content: "If you use our website, we may collect certain technical information such as: IP Address, Browser Type, Device Information, and Website Usage Statistics. This information helps us improve website performance and user experience."
     },
     {
       id: 7,
-      title: "Changes to This Policy",
-      content: "We may update this Privacy Policy periodically to reflect changes in legal requirements or our operational practices. Any material changes will be communicated via email and posted on this page with an updated revision date."
+      title: "Communication Consent",
+      content: "By registering with A&M Matrimony, you agree to receive Phone Calls, SMS Messages, WhatsApp Messages, and Email Notifications related to matchmaking services, profile updates, promotions, and customer support. You may opt out of promotional communications at any time."
     },
     {
       id: 8,
+      title: "Verification and Background Checks",
+      content: "While A&M Matrimony may conduct basic verification procedures, we do not guarantee the complete accuracy of information provided by members. Users are advised to independently verify details before proceeding with any matrimonial alliance."
+    },
+    {
+      id: 9,
+      title: "Data Retention",
+      content: "Your information will be retained as long as your profile remains active or as required by applicable laws. We may remove inactive profiles after a reasonable period."
+    },
+    {
+      id: 10,
+      title: "Account Deletion",
+      content: "Members may request profile deletion by contacting A&M Matrimony customer support. Upon approval, personal information will be removed from public view, subject to legal and operational requirements."
+    },
+    {
+      id: 11,
+      title: "Changes to This Privacy Policy",
+      content: "A&M Matrimony reserves the right to modify this Privacy Policy at any time. Updated versions will be published on our website and become effective immediately upon posting."
+    },
+    {
+      id: 12,
       title: "Contact Us",
-      content: "If you have any questions, concerns, or grievances regarding our privacy practices, please contact our Data Protection Officer by emailing privacy@am-matrimony.com or calling our support line at +91 12345 67890."
+      content: "By using A&M Matrimony services, you acknowledge that you have read, understood, and agreed to this Privacy Policy. You can reach us at our Noida Office: UG-10, The Aaranya Hotmart, Sector 119, Noida, Uttar Pradesh - 201304, or our Delhi Office: B-68 BK Dutt Colony, New Delhi-110003."
     }
   ];
 
@@ -91,7 +111,7 @@ export default function Privacy() {
               <ShieldAlert className="text-primary w-6 h-6 md:w-8 md:h-8" />
             </div>
             <p className="text-gray-600 text-base md:text-lg leading-relaxed">
-              At A&M Matrimony, we deeply value the trust you place in us when searching for your life partner. This policy explains what information we collect, why we collect it, and the strict measures we take to keep it safe.
+              At A&M Matrimony, we value your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, store, and protect your data when you use our matrimonial services.
             </p>
           </div>
 

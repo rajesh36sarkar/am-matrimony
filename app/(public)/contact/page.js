@@ -2,15 +2,13 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle, User, Loader2, Heart, Sparkles } from "lucide-react";
-import { FaFacebookF, FaInstagram, FaYoutube, FaWhatsapp } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaYoutube, FaTwitter } from "react-icons/fa";
 import { db } from "@/lib/firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 // ---------------------------------------------------------------------------
-// 1. ISOLATED FORM COMPONENT (Fixes typing lag)
+// 1. ISOLATED FORM COMPONENT
 // ---------------------------------------------------------------------------
-// By isolating the state here, typing in the inputs will ONLY re-render 
-// the form, not the heavy map, hero image, or parent animations.
 const ContactForm = ({ itemVariants }) => {
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
@@ -132,20 +130,17 @@ const ContactForm = ({ itemVariants }) => {
   );
 };
 
-
 // ---------------------------------------------------------------------------
 // 2. MAIN PAGE COMPONENT
 // ---------------------------------------------------------------------------
 export default function Contact() {
   const [mapLoaded, setMapLoaded] = useState(false);
 
-  // Defer map rendering slightly to prioritize main UI paint
   useEffect(() => {
     const timer = setTimeout(() => setMapLoaded(true), 500);
     return () => clearTimeout(timer);
   }, []);
 
-  // Framer Motion Variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
@@ -159,7 +154,6 @@ export default function Contact() {
   return (
     <div className="w-full bg-slate-50 min-h-screen font-sans overflow-hidden pb-16 md:pb-24">
       
-      {/* Premium Hero Section */}
       <section className="relative h-[55vh] min-h-[400px] flex items-center justify-center overflow-hidden mb-16">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-105 motion-safe:animate-[pulse_15s_ease-in-out_infinite_alternate]"
@@ -168,7 +162,6 @@ export default function Contact() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-slate-50"></div>
         </div>
 
-        {/* Added willChange for hardware acceleration to stop animation stutter */}
         <motion.div 
           style={{ willChange: "transform, opacity" }}
           animate={{ y: [0, -15, 0], opacity: [0.3, 0.6, 0.3] }} 
@@ -206,11 +199,9 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Main Content Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 -mt-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12">
           
-          {/* Left Column - Contact Info */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -218,20 +209,32 @@ export default function Contact() {
             viewport={{ once: true, amount: 0.1 }}
             className="lg:col-span-5 space-y-6 md:space-y-8"
           >
-            {/* Contact Details Card */}
             <motion.div variants={itemVariants} className="bg-white shadow-xl shadow-slate-200/50 rounded-3xl p-8 border border-slate-100 hover:shadow-2xl transition-shadow duration-300">
               <h2 className="text-2xl font-bold text-slate-800 mb-8 flex items-center gap-3">
                 <span className="w-8 h-1 bg-red-600 rounded-full inline-block"></span>
                 Contact Information
               </h2>
               <div className="space-y-8">
+                
+                {/* Updated Address 1 */}
                 <div className="flex items-start gap-5 group">
                   <div className="bg-red-50 p-4 rounded-2xl text-red-600 shrink-0 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300 shadow-sm">
                     <MapPin size={24} />
                   </div>
                   <div>
-                    <p className="font-bold text-slate-800">Head Office</p>
-                    <p className="text-slate-600 mt-1.5 leading-relaxed">123 Matrimony Street, Nayapalli<br/>Bhubaneswar, Odisha - 751001</p>
+                    <p className="font-bold text-slate-800">Noida Office</p>
+                    <p className="text-slate-600 mt-1.5 leading-relaxed">UG-10, The Aaranya Hotmart, Sector 119<br/>Noida, Uttar Pradesh - 201304</p>
+                  </div>
+                </div>
+
+                {/* Updated Address 2 */}
+                <div className="flex items-start gap-5 group">
+                  <div className="bg-red-50 p-4 rounded-2xl text-red-600 shrink-0 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300 shadow-sm">
+                    <MapPin size={24} />
+                  </div>
+                  <div>
+                    <p className="font-bold text-slate-800">Delhi Office</p>
+                    <p className="text-slate-600 mt-1.5 leading-relaxed">B-68, BK Dutt Colony<br/>New Delhi - 110003</p>
                   </div>
                 </div>
                 
@@ -242,7 +245,6 @@ export default function Contact() {
                   <div>
                     <p className="font-bold text-slate-800">Phone</p>
                     <p className="text-slate-600 mt-1.5">+91 98765 43210</p>
-                    <p className="text-slate-600">+91 12345 67890</p>
                   </div>
                 </div>
 
@@ -271,30 +273,29 @@ export default function Contact() {
               </div>
             </motion.div>
 
-            {/* Social Media Card */}
             <motion.div variants={itemVariants} className="bg-white shadow-xl shadow-slate-200/50 rounded-3xl p-8 border border-slate-100">
               <h2 className="text-xl font-bold text-slate-800 mb-6 flex items-center gap-3">
                 <span className="w-6 h-1 bg-red-600 rounded-full inline-block"></span>
                 Connect With Us
               </h2>
+              {/* Updated Social Links */}
               <div className="flex gap-4">
-                <a href="#" aria-label="Facebook" className="bg-blue-600 text-white p-4 rounded-2xl hover:bg-blue-700 hover:-translate-y-1.5 transition-all duration-300 shadow-md hover:shadow-blue-600/30">
+                <a href="https://www.facebook.com/profile.php?id=61590506096779" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="bg-blue-600 text-white p-4 rounded-2xl hover:bg-blue-700 hover:-translate-y-1.5 transition-all duration-300 shadow-md hover:shadow-blue-600/30">
                   <FaFacebookF size={22} />
                 </a>
-                <a href="#" aria-label="Instagram" className="bg-gradient-to-tr from-yellow-500 via-pink-600 to-purple-600 text-white p-4 rounded-2xl hover:-translate-y-1.5 transition-all duration-300 shadow-md hover:shadow-pink-500/30">
+                <a href="https://www.instagram.com/anm_matrimony/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="bg-gradient-to-tr from-yellow-500 via-pink-600 to-purple-600 text-white p-4 rounded-2xl hover:-translate-y-1.5 transition-all duration-300 shadow-md hover:shadow-pink-500/30">
                   <FaInstagram size={22} />
                 </a>
-                <a href="#" aria-label="YouTube" className="bg-red-600 text-white p-4 rounded-2xl hover:bg-red-700 hover:-translate-y-1.5 transition-all duration-300 shadow-md hover:shadow-red-600/30">
+                <a href="https://www.youtube.com/channel/UC3JR8u0Rbq8xIA6SKxhBzNg" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="bg-red-600 text-white p-4 rounded-2xl hover:bg-red-700 hover:-translate-y-1.5 transition-all duration-300 shadow-md hover:shadow-red-600/30">
                   <FaYoutube size={22} />
                 </a>
-                <a href="#" aria-label="WhatsApp" className="bg-green-500 text-white p-4 rounded-2xl hover:bg-green-600 hover:-translate-y-1.5 transition-all duration-300 shadow-md hover:shadow-green-500/30">
-                  <FaWhatsapp size={22} />
+                <a href="https://x.com/AnM_MATRIMONY" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="bg-black text-white p-4 rounded-2xl hover:-translate-y-1.5 transition-all duration-300 shadow-md hover:shadow-gray-500/30">
+                  <FaTwitter size={22} />
                 </a>
               </div>
             </motion.div>
           </motion.div>
 
-          {/* Right Column - Contact Form & Map */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -310,12 +311,10 @@ export default function Contact() {
                 <p className="text-slate-500 font-medium">Fill out the form below and our team will get back to you within 24 hours.</p>
               </div>
 
-              {/* Render the decoupled form here */}
               <ContactForm itemVariants={itemVariants} />
               
             </motion.div>
 
-            {/* Map Integration */}
             <motion.div variants={itemVariants} className="bg-white shadow-xl shadow-slate-200/50 rounded-3xl overflow-hidden border border-slate-100 h-[280px] md:h-[320px] relative group p-2">
               <div className="w-full h-full rounded-2xl overflow-hidden relative bg-slate-100 flex items-center justify-center">
                 {mapLoaded ? (

@@ -8,58 +8,63 @@ export default function Terms() {
   const termsData = [
     {
       id: 1,
-      title: "Acceptance of Terms",
-      content: "By accessing or using A&M Matrimony website, you agree to be bound by these Terms & Conditions. If you disagree with any part of these terms, you may not access our service."
+      title: "Eligibility",
+      content: "Users must be legally eligible to marry under applicable laws. Minimum age: 21 years for males and 18 years for females. Users must provide accurate and truthful information during registration."
     },
     {
       id: 2,
-      title: "Eligibility",
-      content: "You must be at least 18 years of age (or the legal age for marriage in your jurisdiction) to register. You agree to provide accurate, current, and complete information during the registration process."
+      title: "Registration & Profile Creation",
+      content: "Members must provide genuine personal, educational, professional, and family details. Submission of false, misleading, or incomplete information may result in profile suspension or termination. A&M Matrimony reserves the right to verify profile details when necessary."
     },
     {
       id: 3,
-      title: "Membership Plans",
-      content: "We offer Free, Silver, Gold, and Platinum plans. Features and pricing are as displayed on the Packages page. Payment processing is handled securely, and all premium subscriptions are subject to our refund policy."
+      title: "User Responsibilities",
+      content: "Members are solely responsible for the information shared on their profiles. Users must independently verify the credentials and background of prospective matches before making any decision. A&M Matrimony is a matchmaking platform and does not guarantee marriage or compatibility."
     },
     {
       id: 4,
-      title: "User Conduct",
-      content: "You agree not to post false, misleading, or inappropriate content. Harassment, fraud, request for money, or misuse of the platform will result in immediate termination of your account and potential legal action."
+      title: "Privacy & Confidentiality",
+      content: "Personal information shared with A&M Matrimony will be handled with reasonable care and confidentiality. Users should avoid sharing sensitive financial information with other members. A&M Matrimony will not sell or disclose personal information except as required by law or with user consent."
     },
     {
       id: 5,
-      title: "Privacy",
-      content: "Your privacy is paramount. Your use of the site is also governed by our Privacy Policy, which outlines how we collect, use, and protect your personal information."
+      title: "Membership Plans & Payments",
+      content: "Membership fees are non-transferable. Services included in Silver, Gold, Platinum, or other plans will be provided as described in the selected package. Payments once made are generally non-refundable unless otherwise specified in the Refund Policy."
     },
     {
       id: 6,
-      title: "Intellectual Property",
-      content: "All content, logos, text, graphics, and design are the exclusive property of A&M Matrimony. You may not copy, reproduce, distribute, or create derivative works without our explicit written permission."
+      title: "Prohibited Activities",
+      content: "Members shall not create fake or duplicate profiles; use abusive, offensive, discriminatory, or inappropriate language; harass, threaten, or mislead other members; or use the platform for dating, advertising, business promotion, or unlawful activities."
     },
     {
       id: 7,
-      title: "Disclaimer of Warranties",
-      content: "The platform is provided on an 'as is' and 'as available' basis. While we verify profiles, we do not guarantee successful matches, nor do we assume responsibility for the offline conduct of our members."
+      title: "Profile Suspension or Termination",
+      content: "A&M Matrimony reserves the right to suspend or remove any profile that violates these Terms & Conditions, provides false information, receives repeated complaints from other members, or engages in fraudulent or suspicious activities."
     },
     {
       id: 8,
       title: "Limitation of Liability",
-      content: "To the maximum extent permitted by law, A&M Matrimony shall not be liable for any indirect, incidental, or consequential damages arising from your use of the site or interactions with other members."
+      content: "A&M Matrimony acts only as a facilitator for introductions between members. We do not guarantee the authenticity, character, financial status, health status, or intentions of any member. Users must conduct their own due diligence before proceeding with any matrimonial alliance."
     },
     {
       id: 9,
-      title: "Termination",
-      content: "We reserve the right to suspend or terminate accounts that violate these terms, behave suspiciously, or remain inactive for extended periods, without prior notice or liability."
+      title: "Communication Consent",
+      content: "By registering, users consent to receive calls, SMS, WhatsApp messages, and emails related to matchmaking services, profile updates, and promotional offers."
     },
     {
       id: 10,
-      title: "Governing Law",
-      content: "These terms are governed by and construed in accordance with the laws of India. Any disputes shall be exclusively resolved in the competent courts of Bhubaneswar, Odisha."
+      title: "Intellectual Property",
+      content: "All content, logos, designs, and materials associated with A&M Matrimony are the property of A&M Matrimony and may not be copied or reproduced without written permission."
     },
     {
       id: 11,
-      title: "Contact Information",
-      content: "For questions, concerns, or legal inquiries regarding these terms, please contact our legal team at legal@am-matrimony.com."
+      title: "Amendments",
+      content: "A&M Matrimony reserves the right to modify these Terms & Conditions at any time. Continued use of the platform constitutes acceptance of the updated terms."
+    },
+    {
+      id: 12,
+      title: "Governing Law",
+      content: "These Terms & Conditions shall be governed by the laws of India. Any disputes shall be subject to the jurisdiction of the courts in Noida, Uttar Pradesh."
     }
   ];
 
@@ -104,7 +109,7 @@ export default function Terms() {
           <div className="flex items-center gap-3 mb-8 pb-8 border-b border-gray-100">
             <ShieldCheck className="text-primary w-8 h-8 shrink-0" />
             <p className="text-gray-600 text-lg leading-relaxed">
-              Welcome to A&M Matrimony. Please read these terms carefully before using our platform. By accessing our services, you agree to be bound by these legal obligations.
+              Welcome to A&M Matrimony. By registering, accessing, or using our services, you agree to comply with the following Terms & Conditions. Please read them carefully before creating a profile or using our platform.
             </p>
           </div>
 
